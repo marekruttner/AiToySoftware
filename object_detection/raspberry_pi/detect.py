@@ -93,7 +93,7 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
 
     # Stop the program if the ESC key is pressed.
     #if cv2.waitKey(1) & btn.is_pressed:
-    if cv2.waitKey(1) & ord 0xFF == 'q':
+    if cv2.waitKey(1) & 0xFF == ord('q'):
       #btn.close()
       break
       #btn.close()
