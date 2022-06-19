@@ -20,15 +20,6 @@ btn = Button(14)
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
-  """Continuously run inference on images acquired from the camera.
-  Args:
-    model: Name of the TFLite object detection model.
-    camera_id: The camera id to be passed to OpenCV.
-    width: The width of the frame captured from the camera.
-    height: The height of the frame captured from the camera.
-    num_threads: The number of CPU threads to run the model.
-    enable_edgetpu: True/False whether the model is a EdgeTPU model.
-  """
 
   # Variables to calculate FPS
   counter, fps = 0, 0
@@ -114,7 +105,7 @@ def main():
       '--model',
       help='Path of the object detection model.',
       required=False,
-      default='/home/pi/examples/lite/examples/object_detection/raspberry_pi/efficientdet_lite0.tflite')
+      default='/')
   parser.add_argument(
       '--cameraId', help='Id of camera.', required=False, type=int, default=0)
   parser.add_argument(
