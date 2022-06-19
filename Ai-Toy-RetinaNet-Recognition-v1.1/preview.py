@@ -15,9 +15,6 @@ from take import take
 btn = Button(14)
 
 def preview():
-    # Playing video from file:
-    # cap = cv2.VideoCapture('vtest.avi')
-    # Capturing video from webcam:
     cap = cv2.VideoCapture(0)
 
     currentFrame = 0
@@ -27,10 +24,6 @@ def preview():
 
         # Handles the mirroring of the current frame
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-
-        # Saves image of the current frame in jpg file
-        # name = 'frame' + str(currentFrame) + '.jpg'
-        # cv2.imwrite(name, frame)
 
         # Display the resulting frame
         cv2.imshow('frame',frame)
