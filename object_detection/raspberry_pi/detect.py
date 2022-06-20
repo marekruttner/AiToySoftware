@@ -3,9 +3,9 @@
 import argparse
 import sys
 import time
+import glob
 
-#from gpiozero import Button
-import screeninfo
+#from gpiozero import Button #uncomment for using button to close window
 
 import cv2
 from tflite_support.task import core
@@ -13,10 +13,7 @@ from tflite_support.task import processor
 from tflite_support.task import vision
 import utils
 
-#screen_id = 2
-
-btn = Button(14)
-#screen = screeninfo.get_monitors()[screen_id]
+#btn = Button(14) #uncomment for using button to close window
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
@@ -82,8 +79,8 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     cv2.putText(image, fps_text, text_location, cv2.FONT_HERSHEY_PLAIN,
                 font_size, text_color, font_thickness)
 
-    # Stop the program if the ESC key is pressed.
-    #if cv2.waitKey(1) & btn.is_pressed:
+    #if cv2.waitKey(1) & btn.is_pressed: #stop the program when button is pressed
+    # Stop the program if the q key is pressed.
     if cv2.waitKey(1) & 0xFF == ord('q'):
       #btn.close()
       break
@@ -105,7 +102,7 @@ def main():
       '--model',
       help='Path of the object detection model.',
       required=False,
-      default='/')
+      default=''.join(glob.glob('./*.tflite')))
   parser.add_argument(
       '--cameraId', help='Id of camera.', required=False, type=int, default=0)
   parser.add_argument(

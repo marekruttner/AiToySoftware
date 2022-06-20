@@ -12,9 +12,7 @@ _TEXT_COLOR = (0, 0, 255)
 bar = ["0, 0, 255", "0, 255, 0", "255, 0, 0"]
 
 for indx, detections in enumerate(bar):
-"""  
-   
- # random
+""" 
 
 def visualize(
     image: np.ndarray,
