@@ -24,7 +24,7 @@ def visualize(
     if detetion not in _COLOR:
       _COLOR[detection] = [randint(0, 255), randint(0, 255), randint(0, 255)]
 
-    for ddetection in detection_result[detection]:
+    for detection in detection_result[detection]:
       # Draw bounding_box
       bbox = detection.bounding_box
       start_point = bbox.origin_x, bbox.origin_y
