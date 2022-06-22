@@ -21,7 +21,7 @@ def visualize(
 ) -> np.ndarray:
   
   for detection in detection_result.detections:
-    if detetion not in _COLOR:
+    if detection not in _COLOR:
       _COLOR[detection] = [randint(0, 255), randint(0, 255), randint(0, 255)]
 
     for detection in detection_result[detection]:
