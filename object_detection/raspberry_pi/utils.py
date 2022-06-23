@@ -8,7 +8,7 @@ _MARGIN = 10  # pixels
 _ROW_SIZE = 10  # pixels
 _FONT_SIZE = 1
 _FONT_THICKNESS = 1
-_COLOR = (255, 0, 0)
+_COLOR = list(np.random(size=3)*255)
 """
 bar = ["0, 0, 255", "0, 255, 0", "255, 0, 0"]
 
