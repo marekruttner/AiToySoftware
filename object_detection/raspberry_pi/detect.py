@@ -5,7 +5,7 @@ import sys
 import time
 import glob
 
-from gpiozero import Button #uncomment for using button to close window
+#from gpiozero import Button #uncomment for using button to close window
 
 import cv2
 from tflite_support.task import core
@@ -13,7 +13,7 @@ from tflite_support.task import processor
 from tflite_support.task import vision
 import utils
 
-btn = Button(14) #uncomment for using button to close window
+#btn = Button(14) #uncomment for using button to close window
 
 def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
         enable_edgetpu: bool) -> None:
@@ -79,12 +79,12 @@ def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
     cv2.putText(image, fps_text, text_location, cv2.FONT_HERSHEY_PLAIN,
                 font_size, text_color, font_thickness)
 
-    if cv2.waitKey(1) & btn.is_pressed: #stop the program when button is pressed
+    #if cv2.waitKey(1) & btn.is_pressed: #stop the program when button is pressed
     # Stop the program if the q key is pressed.
-    #if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
       #btn.close()
       break
-      btn.close()
+      #btn.close()
 
     # Show output
     cv2.namedWindow('object_detector', cv2.WND_PROP_FULLSCREEN)
@@ -110,13 +110,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=1920)
+      default=800)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=1080)
+      default=480)
   parser.add_argument(
       '--numThreads',
       help='Number of CPU threads to run the model.',

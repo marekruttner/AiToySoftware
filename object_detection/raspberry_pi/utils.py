@@ -8,12 +8,14 @@ _MARGIN = 10  # pixels
 _ROW_SIZE = 10  # pixels
 _FONT_SIZE = 1
 _FONT_THICKNESS = 1
-_COLOR = [] #list(np.random.random(size=3) * 255)
+_COLOR = list(np.random.random(size=3) * 255) #[]
 
-for im detections in enumerate(_COLOR):
+"""
+for i, detections in enumerate(_COLOR):
   if _COLOR in detection_result.detections:
     np.random.random(size=3) * 255
 
+"""
 """
 bar = ["0, 0, 255", "0, 255, 0", "255, 0, 0"]
 
