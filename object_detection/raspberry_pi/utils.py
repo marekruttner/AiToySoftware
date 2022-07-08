@@ -8,7 +8,9 @@ _MARGIN = 10  # pixels
 _ROW_SIZE = 10  # pixels
 _FONT_SIZE = 1
 _FONT_THICKNESS = 1
-_COLOR = """list(np.random.random(size=3) * 255)""" """[classes[i]]""" [[random.randint(0, 255) for _ in range(3)] for i in range(len(class_name))]
+_COLOR = [[random.randint(0, 255) for _ in range(3)] for _ in range(len(class_name))]
+
+"""list(np.random.random(size=3) * 255)""" """[classes[i]]""" 
 
 #i = list(np.random.random(size=3) * 255)
 
