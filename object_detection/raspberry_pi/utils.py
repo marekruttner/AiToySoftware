@@ -35,8 +35,8 @@ def visualize(
 
     category = detection.classes[0]
     class_name = category.class_name
-    _COLOR = [[random.randint(0, 255) for _ in range(3)] for _ in range(len(class_name))]
-
+    _COLOR = [list(np.random.random(size=3) * 255) for _ in range(len(class_name))]
+    
     # Draw bounding_box
     bbox = detection.bounding_box
     start_point = bbox.origin_x, bbox.origin_y
