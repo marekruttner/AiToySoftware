@@ -8,7 +8,9 @@ _MARGIN = 10  # pixels
 _ROW_SIZE = 10  # pixels
 _FONT_SIZE = 1
 _FONT_THICKNESS = 1
-_COLOR = list(np.random.random(size=3) * 255) #[]
+_COLOR = """list(np.random.random(size=3) * 255)""" """[classes[i]]""" [[random.randint(0, 255) for _ in range(3)] for _ in range(len(class_name))]
+
+#i = list(np.random.random(size=3) * 255)
 
 """
 for i, detections in enumerate(_COLOR):
@@ -44,4 +46,4 @@ def visualize(
     cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
                 _FONT_SIZE, _COLOR, _FONT_THICKNESS)
 
-  return image
+  return image, class_name
