@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 from tflite_support.task import processor
-from random import randint
+from random
 
 _MARGIN = 10  # pixels
 _ROW_SIZE = 10  # pixels
