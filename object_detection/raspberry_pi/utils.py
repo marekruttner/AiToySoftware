@@ -33,7 +33,7 @@ def visualize(
 
     category = detection.classes[0]
     class_name = category.class_name
-    _COLOR = for i in enumerate(clr_lst): 
+    _COLOR = [np.random.random(size=3) * 255] for _ in enumerate(clr_lst): 
       if _COLOR in detection_result.detections:
         np.random.random(size=3) * 255
 
