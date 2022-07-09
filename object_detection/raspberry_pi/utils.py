@@ -20,11 +20,9 @@ for i, detections in enumerate(_COLOR):
     np.random.random(size=3) * 255
 
 """
-"""
-bar = ["0, 0, 255", "0, 255, 0", "255, 0, 0"]
+clr_lst = ["0, 0, 255", "0, 255, 0", "255, 0, 0"]
 
-for indx, detections in enumerate(bar):
-""" 
+
 
 def visualize(
     image: np.ndarray,
@@ -35,7 +33,9 @@ def visualize(
 
     category = detection.classes[0]
     class_name = category.class_name
-    _COLOR = list([np.random.random(size=3) * 255 for _ in range(len(category.class_name))])
+    _COLOR = for i in enumerate(clr_lst): 
+      if _COLOR in detection_result.detections:
+        np.random.random(size=3) * 255
 
     # Draw bounding_box
     bbox = detection.bounding_box
